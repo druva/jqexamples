@@ -82,7 +82,11 @@ Output
 
 # Filter
 . | to_entries[] | select(.key == "b") | .value | .[] | select(.t == "mtb") | .f
+returns rb
 
+[. | to_entries[]] | map(select(.value[] | .t == "ct"))[] | .key
+returns
+a
 ```
 {
 	"a": [{

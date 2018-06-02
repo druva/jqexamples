@@ -1,5 +1,6 @@
-# jqexamples
-
+# Filter
+. | map(select(.a ==1))
+Input
 ```
 [{
 		"a": 1,
@@ -15,7 +16,7 @@
 ]
 
 ```
-. | map(select(.a ==1))
+Output
 ```
 [
   {
@@ -28,4 +29,52 @@
     "c": true
   }
 ]
+```
+
+# Add to arry
+
+.data.messages += [{"a": 11}]
+````
+{
+    "report": "1.0",
+    "data": {
+        "date": "d",
+        "messages": [{
+            "d": "d",
+            "xml": "x",
+            "status": "s",
+            "message": "m1"
+        }, {
+            "d": "d",
+            "status": "s2",
+            "message": "m2"
+        }]
+    }
+}
+```
+Output
+```
+{
+  "report": "1.0",
+  "data": {
+    "date": "d",
+    "messages": [
+      {
+        "d": "d",
+        "xml": "x",
+        "status": "s",
+        "message": "m1"
+      },
+      {
+        "d": "d",
+        "status": "s2",
+        "message": "m2"
+      },
+      {
+        "a": 11
+      }
+    ]
+  }
+}
+
 ```

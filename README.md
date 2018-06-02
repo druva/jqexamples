@@ -87,6 +87,10 @@ returns rb
 [. | to_entries[]] | map(select(.value[] | .t == "ct"))[] | .key
 returns
 a
+
+[[. | to_entries[]] | map(select(.value[] ))[] | .key] | unique
+["a","b"]
+
 ```
 {
 	"a": [{

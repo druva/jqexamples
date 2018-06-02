@@ -116,3 +116,61 @@ a
 result
 "rb"
 
+
+
+
+
+
+# Format Change example
+```
+[.[] | .bran as $n | .active as $a | .Emp[] | {k:$n, v:., a:$a}]
+```
+```
+[{
+		"bran": "branch1",
+		"Emp": ["Ren", "Ken", "Ron"],
+		"active": true
+	},
+
+	{
+		"bran": "branch2",
+		"Emp": ["Kel", "Pel", "Bel"],
+		"active": false
+	}]
+```
+
+```
+[
+  {
+    "k": "branch1",
+    "v": "Ren",
+    "a": true
+  },
+  {
+    "k": "branch1",
+    "v": "Ken",
+    "a": true
+  },
+  {
+    "k": "branch1",
+    "v": "Ron",
+    "a": true
+  },
+  {
+    "k": "branch2",
+    "v": "Kel",
+    "a": false
+  },
+  {
+    "k": "branch2",
+    "v": "Pel",
+    "a": false
+  },
+  {
+    "k": "branch2",
+    "v": "Bel",
+    "a": false
+  }
+]
+
+```

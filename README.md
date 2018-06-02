@@ -78,3 +78,31 @@ Output
 }
 
 ```
+
+Filter
+. | to_entries[] | select(.key == "b") | .value | .[] | select(.t == "mtb") | .f
+```
+{
+	"a": [{
+			"f": "ra",
+			"t": "m"
+		},
+		{
+			"f": "cf",
+			"t": "ct"
+		}
+	],
+	"b": [{
+			"f": "rb",
+			"t": "mtb"
+		},
+		{
+			"f": "cfb",
+			"t": "ctb"
+		}
+	]
+}
+```
+result
+"rb"
+

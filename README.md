@@ -79,7 +79,8 @@ Output
 
 ```
 
-Filter
+
+# Filter
 . | to_entries[] | select(.key == "b") | .value | .[] | select(.t == "mtb") | .f
 ```
 {
